@@ -1,0 +1,35 @@
+ @using BOL;
+
+@{
+    ViewData["Title"] = "Timesheeet List";
+}
+
+@{
+        Timesheet ts = (Timesheet)ViewData["data"];
+
+
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Work Description</th>
+                <th>Hours</th>
+                <th>Status</th>
+                
+            </tr>
+
+            @* @foreach (Timesheet t in ts){ *@
+
+                <tr>
+                    <td>@ts.id</td>
+                    <td>@ts.date</td>
+                    <td>@ts.work_description</td>
+                    <td>@ts.hours</td>
+                    <td>@ts.status</td>
+                    @* <td> <a href="/details/@t.id"> details </a></td> *@
+                </tr>
+
+            @* } *@
+
+        </table>
+    }
