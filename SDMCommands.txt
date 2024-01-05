@@ -1,0 +1,26 @@
+DockerFile
+
+FROM node:18
+WORKDIR /app
+COPY package.json /app
+RUN npm install
+COPY . /app
+CMD node server.js
+
+
+
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+git config --global --unset core.gitproxy
+
+
+
+git config --global http.proxy http://exam@192.168.10.4:808
+git config --global credential.helper wincred
+git config --global user.name "iusamahub"
+git config --global user.email "usamaas100@gmail.com"
+git config --global user.password "github_token"
+
+
+
+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
