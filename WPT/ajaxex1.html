@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function f1(){
+            let http = new XMLHttpRequest();
+            http.onload=function(){
+                // console.log(JSON.parse(http.responseText))
+                console.log(JSON.parse(http.responseText));
+                let obj = JSON.parse(http.responseText)
+                console.log(obj.data.first_name);
+                document.getElementById("p1").innerHTML = `${obj.data.first_name}`
+            }
+            let id = document.getElementById("num").value //1 2 
+            http.open("GET", `https://reqres.in/api/users/${id}`)
+            http.send()
+        }
+    </script>
+</head>
+
+<body>
+    <input type="number" id="num" />
+    <input type="button" value="AJAX" onclick="f1()" />
+    <p id="p1"></p>
+</body>
+</html>
